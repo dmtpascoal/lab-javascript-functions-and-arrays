@@ -1,4 +1,4 @@
-// Iteration #1: Find the maximum
+  // Iteration #1: Find the maximum
 function maxOfTwoNumbers(number1, number2) {
   return Math.max(number1, number2);
 }
@@ -91,8 +91,11 @@ const wordsUnique = [
 function uniquifyArray(firstArray) {
   if (firstArray.length > 0) {
     let newArray = [];
-    for (var i = 0; i < firstArray.length; i++) {
-      if (firstArray.indexOf(firstArray[i], i + 1) === -1) {
+    for (let i = 0; i < firstArray.length; i++) {
+      if (newArray.indexOf(firstArray[i]) < 0) {
+        // No if em cima comparas se o newArray já tem a palavra
+        //if (newArray.indexOf(firstArray[i]) < 0) { ...
+        //e depois então fazes o push. Era a única coisa que te faltava, verificar se já exisita no array novo
         newArray.push(firstArray[i]);
       }
     }
@@ -103,6 +106,12 @@ function uniquifyArray(firstArray) {
   }
 }
 uniquifyArray(wordsUnique);
+console.log(uniquifyArray(wordsUnique));
+
+let testArray = ['iPhone', 'Samsung', 'Android', 'iOS', 'iPhone', 'Samsung', 'Nokia', 'Blackberry', 'Android'];
+uniquifyArray(testArray);
+
+console.log(uniquifyArray(testArray));
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
